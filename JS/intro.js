@@ -24,5 +24,6 @@ window.addEventListener('DOMContentLoaded', () => {
                 intro.style.display = 'none'; // 아예 제거
             }, 1000); // CSS transition 시간과 동일 (1초)
         }
-    }, 3500); // 3초(바 채우기) + 0.2초(잠시 멈춤 여유)
+    }, 3500); // 3초(바 채우기) + 0.5초(잠시 멈춤 여유)
 });
+
