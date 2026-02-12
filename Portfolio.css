@@ -1,0 +1,350 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+.top {
+    background: #51b8fc;
+    background: linear-gradient(180deg, rgba(81, 184, 252, 1) 20%, rgba(93, 0, 255, 0.97) 100%);
+    width: 100%;
+    height: 400px;
+    color: white;
+}
+
+.top-content {
+    display: flex;
+    justify-content: space-between;
+
+    height: 100%;
+}
+
+.btn {
+    position: relative;
+    /* 툴팁의 위치 기준점이 됨 */
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+
+    transition: all 0.3s;
+    /* 색상이나 크기가 부드럽게 변하도록 설정 */
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* 마우스를 올렸을 때 (:hover) */
+.btn:hover {
+    background-color: #777;
+    /* 배경색을 약간 밝게/다르게 변경 */
+    transform: scale(1.05);
+    /* 크기를 1.05배 살짝 키움 */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    /* 그림자 추가해서 붕 뜬 느낌 */
+}
+
+/* 버튼을 꾹 누르고 있을 때 (:active) */
+.top-content button:active {
+    /* 크기를 0.95배(95%)로 줄암 */
+    transform: scale(0.95);
+}
+
+/* 숨겨진 설명글 (처음엔 안 보임) */
+.tooltip {
+    position: absolute;
+    bottom: 120%;
+    /* 버튼 바로 위에 위치 */
+    left: 50%;
+    transform: translateX(-50%);
+    /* 가운데 정렬 */
+
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    width: max-content;
+    /* 글자 길이에 맞게 너비 조절 */
+
+    /* 핵심: 투명하게 숨김 */
+    opacity: 0;
+    visibility: hidden;
+    /* 마우스도 안 걸리게 완전 숨김 */
+    transition: opacity 0.3s;
+}
+
+/* 마우스 올리면 나타나기 */
+.btn:hover .tooltip {
+    opacity: 1;
+    /* 불투명하게 (보임) */
+    visibility: visible;
+}
+
+.text-box {
+    flex-basis: 50%;
+    /* 전체 너비의 반 정도만 차지 */
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.text-box h3 {
+    padding-bottom: 20px;
+    font-size: 2rem;
+}
+
+.text-box p {
+    padding-bottom: 20px;
+}
+
+.top img {
+    width: 250px;
+    padding: 0;
+    margin-right: 5ex;
+
+    align-self: flex-end;
+
+}
+
+.overlay {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: white;
+}
+
+.overlay p {
+    padding: 15px;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 14px;
+}
+
+.container {
+    background-color: #4C85D4;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.header-text h4 {
+    font-size: 2ex;
+    margin-bottom: 20px;
+}
+
+.icon-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    /*전체 너비제한*/
+    margin: 0 auto;
+    /*가운데 정렬*/
+    justify-content: space-around;
+    /*아이콘들 사이 간격을 균등하게 배분*/
+    flex-wrap: wrap;
+}
+
+.icon-box {
+    flex: 1;
+    /* 기본적으로 1/4씩 차지 (4열) */
+    padding: 30px;
+    text-align: center;
+    /* 이미지처럼 가운데 정렬 원하시면 center로 변경 */
+    box-sizing: border-box;
+    /* 패딩을 넓이에 포함 */
+}
+
+.icon-box i {
+    background-color: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    /*네모를 원으로*/
+
+    color: #4C85D4;
+
+    line-height: 100px;
+    /*높이와 똑같이 주면서 세로 중앙 정렬*/
+    text-align: center;
+    /*가로 중앙정렬*/
+
+    font-size: 40px;
+    margin-bottom: 10px;
+    display: inline-block;
+
+    transition: transform 0.8s ease;
+}
+
+.icon-box:hover {
+    transform: scale(1.15);
+    /*1.5배 커지기*/
+}
+
+.icon-box h4 {
+    margin-bottom: 5px;
+}
+
+.icon-box p {
+    font-size: 1ex;
+}
+
+.bottom-header {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.bottom-header h4 {
+    font-size: 3ex;
+}
+
+.gallery-container {
+    display: flex;
+    /*가로 배치*/
+    flex-wrap: wrap;
+    /*공간이 모자르면 줄바꿈*/
+    width: 100%;
+
+    max-width: 1000px;
+    margin: 0 auto 50px;
+}
+
+.gallery-item {
+    width: 50%;
+    height: 300px;
+    padding: 50px;
+
+    /* 배경 설정 필수 3총사 */
+    background-size: cover;
+    /* 이미지가 박스를 꽉 채움 */
+    background-position: center;
+    /* 이미지 중앙 보여줌 */
+    background-repeat: no-repeat;
+    /* 반복 방지 */
+
+    color: white;
+    /* 글씨 잘 보이게 흰색 */
+
+    transition: box-shadow 0.5s ease;
+}
+
+.gallery-item:hover {
+    /* inset: 그림자를 박스 안쪽으로 만듦
+       0 0 0: 그림자 위치 이동 없음 (정가운데)
+       15px: 그림자 두께 (테두리 두께)
+       white: 그림자 색상
+    */
+    box-shadow: inset 0 0 0 15px white;
+}
+
+.item-1 {
+    background-image: url('../IMG/portfolio-1-1.jpg');
+}
+
+.item-2 {
+    background-image: url('../IMG/portfolio-2.jpg');
+}
+
+.item-3 {
+    background-image: url('../IMG/portfolio-3-1.jpg');
+}
+
+.item-4 {
+    background-image: url('../IMG/portfolio-4-1.jpg');
+}
+
+.footer {
+    text-align: center;
+    /* 내용물 가운데 정렬 */
+    padding: 50px 0;
+    /* 위아래 여백을 줘서 답답하지 않게 */
+    margin-top: 50px;
+    /* 갤러리랑 너무 붙지 않게 위쪽 거리두기 */
+}
+
+.footer i {
+    width: 50px;
+    /* 위쪽 아이콘(100px)보다 작게! */
+    height: 50px;
+    line-height: 50px;
+    /* 높이랑 똑같이 주면 세로 중앙 정렬 */
+
+    background-color: #4C85D4;
+    /* 파란색 배경 */
+    color: white;
+    /* 아이콘은 흰색 */
+    border-radius: 50%;
+    /* 완전한 원형 */
+
+    font-size: 20px;
+    /* 아이콘 그림 크기 조절 */
+    margin: 0 15px;
+    /* 아이콘끼리 옆으로 살짝 띄우기 */
+
+    display: inline-block;
+    /* 크기 적용을 위해 필수 */
+    cursor: pointer;
+    /* 마우스 올리면 손가락 모양 */
+    transition: all 0.3s;
+    /* 부드러운 움직임 */
+
+    /* ▼ 이 코드를 추가하면 터치했을 때 번쩍이는 네모 박스가 사라집니다 */
+    -webkit-tap-highlight-color: transparent;
+}
+
+.footer i:hover {
+    background-color: #3b6cb5;
+    /* 색이 살짝 진해짐 */
+    transform: translateY(-5px);
+    /* 공중으로 살짝 뜸 */
+}
+
+.footer p {
+    margin-top: 20px;
+    /* 아이콘이랑 글씨 사이 간격 */
+    color: #888;
+    /* 너무 까맣지 않게 회색으로 */
+    font-size: 14px;
+    /* 글씨 크기 적당히 */
+}
+
+/* 화면 너비가 768px 이하(태블릿/모바일)일 때 실행되는 코드 */
+@media screen and (max-width: 768px) {
+
+    .gallery-item {
+        width: 100%;
+        /* 50%에서 100%로 변경 -> 한 줄에 1개씩 나옴 */
+    }
+
+    /* (선택사항) 텍스트 박스도 모바일에서는 꽉 차게 */
+    .text-box {
+        flex-basis: 100%;
+        margin-left: 0;
+        margin-top: 0;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .top {
+        height: auto;
+        /* 고정 높이(400px)를 풀어서 내용물만큼 늘어나게 함 */
+    }
+
+    /* (선택사항) 상단 배치도 세로로 변경 */
+    .top-content {
+        flex-direction: column;
+        /* 가로(row) -> 세로(column) 변경 */
+        justify-content: center;
+        /* 세로 중앙 정렬 */
+    }
+    .text-box {
+        margin: 0;          /* PC 버전에서 줬던 마진(50px) 제거 */
+        padding: 40px 20px; /* 위아래, 좌우 안쪽 여백 */
+        width: 100%;        /* 너비 꽉 차게 */
+        text-align: center; /* 글씨 가운데 정렬 */
+    }
+    .top img {
+        margin: 0;          /* PC 버전 마진 제거 */
+        align-self: center; /* 혼자 오른쪽(flex-end)에 있던 걸 중앙으로 */
+        margin-top: 20px;   /* 글씨랑 조금 떨어지게 */
+    }
+}

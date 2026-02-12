@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNS Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="../CSS/Portfolio2.css" rel="stylesheet">
+    <link href="../CSS/intro.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container py-5">
+
+        <!-- 상단 프로필 -->
+        <div class="card border-0 shadow-sm mb-4">
+            <div class="card-body p-5">
+                <div class="row align-items-center">
+
+                    <div class="col-md-7 d-flex align-items-center mobile-no-border pe-md-5 mb-4">
+
+                        <div class="flex-shrink-0 me-4">
+                            <img src="../IMG/profile.png" alt="Profile" class="rounded-circle shadow-sm"
+                                style="width: 140px; aspect-ratio: 1/1; object-fit: cover;">
+                        </div>
+
+                        <div>
+                            <h2 class="fw-bold mb-1 text-break">PARK SANGHYEON</h2>
+                            <p class="text-secondary mb-2">Front-end Designer</p>
+
+                            <p class="text-primary mb-3 small">
+                                <i class="bi bi-geo-alt-fill"></i> 경기도 광명시
+                            </p>
+
+                            <a href="https://share.google/yRgPs6oBx6MzvrT8q" target="_blank" rel="noopener noreferrer"
+                                class="btn btn-primary px-4 btn-sm rounded-1">Contact</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 ps-md-5">
+                        <div class="row mb-2">
+                            <div class="col-4 fw-bold text-secondary">Location</div>
+                            <div class="col-8">경기도 광명시</div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-4 fw-bold text-secondary">Age</div>
+                            <div class="col-8">03년생</div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-4 fw-bold text-secondary">Experience</div>
+                            <div class="col-8">신입</div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-4 fw-bold text-secondary">School</div>
+                            <div class="col-8">컴퓨터정보학부</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- 리스트 -->
+        <ul class="nav nav-tabs border-bottom border-light-subtle mb-4" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active fw-bold px-3 pb-2 rounded-0 border-0 border-bottom border-3"
+                    id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-pane" type="button" role="tab"
+                    aria-selected="true">
+                    Profile
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link fw-bold px-3 pb-2 rounded-0 border-0 border-bottom border-3" id="photo-tab"
+                    data-bs-toggle="tab" data-bs-target="#photo-pane" type="button" role="tab" aria-selected="false">
+                    Photo
+                </button>
+            </li>
+        </ul>
+
+        <!-- 하단 프로필 -->
+        <div class="tab-content" id="myTabContent">
+
+            <div class="tab-pane fade show active" id="profile-pane" role="tabpanel" aria-labelledby="profile-tab"
+                tabindex="0">
+                <div class="row">
+
+                    <!-- WORKS -->
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm mb-3 works-card">
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold mb-3">WORKS</h5>
+                                <ul class="list-unstyled mb-0 lh-lg text-secondary">
+                                    <li><a href="#" class="text-decoration-none text-secondary">Landing page design</a>
+                                    </li>
+                                    <li><a href="#" class="text-decoration-none text-secondary">Flyer design</a></li>
+                                    <li><a href="#" class="text-decoration-none text-secondary">Vue.js To-do app</a>
+                                    </li>
+                                    <li><a href="#" class="text-decoration-none text-secondary">Shopping page design</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ABOUT & SkILLS -->
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm mb-3 about-card">
+                            <div class="card-body p-5">
+                                <h5 class="fw-bold mb-4">ABOUT</h5>
+                                <p class="text-secondary mb-3 mb-md-5 lh-lg pseudo">
+                                    I am a front-end designer who is excellent at Bootstrap, Sass, Foundation.
+                                    I have dealt lots of in-house design works and outsource things.
+                                    If you want to check my portfolio, please visit ParkSangHyeon.com
+                                </p>
+                                <hr class="mt-5 mb-5 text-secondary-emphasis opacity-25">
+                                <h5 class="fw-bold mb-4">SKILLS</h5>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span
+                                        class="badge rounded-pill border text-secondary fw-normal p-2 px-3">HTML5</span>
+                                    <span
+                                        class="badge rounded-pill border text-secondary fw-normal p-2 px-3">JavaScript</span>
+                                    <span
+                                        class="badge rounded-pill border text-secondary fw-normal p-2 px-3">CSS3</span>
+                                    <span
+                                        class="badge rounded-pill border text-secondary fw-normal p-2 px-3">Illustrator</span>
+                                    <span
+                                        class="badge rounded-pill border text-secondary fw-normal p-2 px-3">Photoshop</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SING UP & PEOPLE -->
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm mb-3 text-center">
+                            <div class="card-body p-4">
+                                <div class="mb-3"><i class="bi bi-droplet-fill text-primary"
+                                        style="font-size: 4rem;"></i></div>
+                                <h6 class="mb-3">Find me at Linkedout.com</h6>
+                                <button class="btn btn-primary w-100 rounded-1 mb-2">Sign Up</button>
+                                <a href="#" class="small text-decoration-none text-primary">Already a member?</a>
+                            </div>
+                        </div>
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <h6 class="fw-bold text-secondary mb-3">People You Might Know</h6>
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="https://picsum.photos/id/1012/50/50" class="rounded-circle me-3"
+                                        alt="Jason">
+                                    <div>
+                                        <div class="fw-bold fs-6">Jason Derulo</div>
+                                        <small class="text-secondary">Developer</small><br>
+                                        <small class="text-primary"><i class="bi bi-geo-alt-fill"></i> Seoul</small>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://picsum.photos/id/1025/50/50" class="rounded-circle me-3"
+                                        alt="Logan">
+                                    <div>
+                                        <div class="fw-bold fs-6">Logan Daul</div>
+                                        <small class="text-secondary">Developer</small><br>
+                                        <small class="text-primary"><i class="bi bi-geo-alt-fill"></i> Busan</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="photo-pane" role="tabpanel" aria-labelledby="photo-tab" tabindex="0">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-0 overflow-hidden rounded">
+
+                        <div id="myProfileCarousel" class="carousel slide" data-bs-ride="carousel">
+
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#myProfileCarousel" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#myProfileCarousel" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#myProfileCarousel" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                            </div>
+
+                            <!-- 갤러리 -->
+                            <div class="carousel-inner rounded">
+                                <div class="carousel-item active">
+                                    <img src="../IMG/키리네.webp" class="d-block w-100" alt="사진1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="../IMG/86.jpg" class="d-block w-100" alt="사진2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="../IMG/1.png" class="d-block w-100" alt="사진3">
+                                </div>
+                            </div>
+
+                            <button class="carousel-control-prev" type="button" data-bs-target="#myProfileCarousel"
+                                data-bs-slide="prev" style="opacity: 1;">
+                                <i class="bi bi-chevron-left text-black fw-bold fs-1" aria-hidden="true"></i>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+
+                            <button class="carousel-control-next" type="button" data-bs-target="#myProfileCarousel"
+                                data-bs-slide="next" style="opacity: 1;">
+                                <i class="bi bi-chevron-right text-black fw-bold fs-1" aria-hidden="true"></i>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- BootStrap 사용 스크립트 -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"></script>
+                <script src="../JS/intro.js"></script>
+</body>
+
+</html>

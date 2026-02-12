@@ -1,0 +1,116 @@
+/* 전체 배경색 지정 */
+body {
+    background: #f7f9fc;
+    /* 폰트가 부트스트랩 기본보다 좀 더 예쁘게 나오도록*/
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+/* 1. 색상 변수 정의 */
+:root {
+    --my-blue: #6fbaf8;       /* 원하는 색상 */
+    --my-blue-dark: #5a9bd0;  /* 버튼 마우스 올렸을 때 쓸 약간 어두운 색 */
+}
+
+/* 2. 글자색 (text-primary) 덮어쓰기 */
+.text-primary {
+    color: var(--my-blue) !important;
+}
+
+/* 3. 버튼색 (btn-primary) 덮어쓰기 */
+.btn-primary {
+    background-color: var(--my-blue) !important;
+    border-color: var(--my-blue) !important;
+}
+
+/* 4. 버튼에 마우스 올렸을 때 (Hover) */
+.btn-primary:hover, 
+.btn-primary:active, 
+.btn-primary:focus {
+    background-color: var(--my-blue-dark) !important;
+    border-color: var(--my-blue-dark) !important;
+}
+
+/* 링크 색상 통일 */
+a {
+    color: var(--my-blue);
+    text-decoration: none;
+}
+
+/* 선택된 탭: 파란색 글씨 & 파란색 밑줄 */
+.nav-tabs .nav-link.active {
+    color: var(--my-blue) !important;
+    border-color: transparent transparent var(--my-blue) transparent !important;
+}
+
+/* 선택 안 된 탭: 회색 글씨 */
+.nav-tabs .nav-link {
+    color: #6c757d;
+}
+
+/* 마우스 올렸을 때: 파란색 글씨 */
+.nav-tabs .nav-link:hover {
+    color: var(--my-blue);
+    border-color: transparent;
+}
+
+/* 카루셀(슬라이드) 이미지 설정 */
+.carousel-item img {
+    width: 100%;
+    height: auto;       /* 모바일: 원본 비율 유지 (안 잘림) */
+    aspect-ratio: 16/9; /*높이가 너무 줄어들지 않게 비율 고정 */
+    object-fit: cover;
+}
+
+/* .pseudo::first-letter{
+    content: '안녕';
+    color: red;
+    font-size: 30px;
+
+: - pseudo-class(상호작용 했을때)
+   :: - pseudo-element(내부의 요소를 변경) 
+   
+   ::first-line(첫번째 줄 변경)
+   ::first-letter(첫번째 글자 변경)
+   ::after(내부 맨 뒤에 뭔가 추가할때)
+   ::before(내부 맨 앞에 뭔가 추가할때)
+   
+} */
+
+/* PC 화면(md 이상)에서만 높이를 500px로 고정 */
+@media (min-width: 768px) {
+    .works-card {
+        height: 450px; /* 원하는 높이로 수정 가능 */
+    }
+}
+
+/* PC 화면(md 이상)에서만 높이를 500px로 고정 */
+@media (min-width: 768px) {
+    .about-card {
+        height: 525px; /* 원하는 높이로 수정 가능 */
+    }
+}
+
+
+/* PC 화면(태블릿 이상) 설정 */
+@media (min-width: 768px) {
+    .carousel-item img {
+        height: 500px;  /* PC: 500px 높이 고정 */
+    }
+}
+
+/* PC 화면(md 이상)에서만 오른쪽 테두리 표시 */
+@media (min-width: 768px) {
+    .mobile-no-border {
+        border-right: 1px solid #dee2e6; /* 부트스트랩 기본 테두리 색상 */
+    }
+}
+
+/* 모바일 화면용 추가 조정 (선택사항) */
+@media (max-width: 767.98px) {
+    /* 모바일에서 프로필 사진과 텍스트가 너무 붙지 않게 조정하고 싶다면 */
+    .mobile-no-border {
+        border-right: none;      /* 테두리 제거 */
+        border-bottom: 1px solid #dee2e6; /* 프로필 아래 줄 추가 */
+        padding-bottom: 1.5rem;  /* 아래쪽 여백 추가 */
+        margin-bottom: 1.5rem !important; /* mb-4 클래스와 겹치지 않게 강제 적용 */
+    }
+}
