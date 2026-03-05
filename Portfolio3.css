@@ -1,0 +1,96 @@
+@charset "UTF-8";
+body {
+  background-color: #f4f6f9;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sidebar {
+  width: 70px; /* 초기 좁은 너비 */
+  background-color: #3b429f;
+  min-height: 100vh;
+  transition: width 0.3s ease-in-out; /* 너비가 변할 때 부드러운 애니메이션 */
+  /* 화면 왼쪽에 고정시켜서 메인 콘텐츠 위로 덮어씌워지게 만듦 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  overflow: hidden; /* 글자가 삐져나오는 것 숨기기 */
+  white-space: nowrap; /* 글자가 밑으로 줄바꿈 되지 않도록 설정 */
+}
+.sidebar:hover {
+  width: 180px; /* 늘어날 목표 너비 */
+}
+.sidebar:hover .nav-item .menu-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+.sidebar .nav-item {
+  display: flex;
+  align-items: center;
+  padding-left: 23px; /* 아이콘 위치를 중앙처럼 보이게 패딩 조정 */
+  transition: 0.3s;
+}
+.sidebar .nav-item i {
+  width: 30px; /* 아이콘 영역을 고정해서 텍스트 시작 위치를 통일 */
+}
+.sidebar .nav-item .menu-text {
+  margin-left: 10px;
+  opacity: 0;
+  transform: translateX(-20px);
+  display: inline-block;
+  /* ★ 마우스가 빠질 때 (원래 상태로 돌아갈 때) */
+  transition: opacity 0.1s ease, transform 0.1s ease;
+}
+.sidebar .nav-item:hover {
+  opacity: 1 !important;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.page-content-wrapper {
+  margin-left: 70px;
+  width: calc(100% - 70px);
+}
+
+#wrapper {
+  overflow-x: hidden;
+}
+
+.search-form {
+  width: 100%; /* 모바일에서는 가로를 꽉 채움 */
+  transition: width 0.4s ease-in-out;
+}
+@media (min-width: 992px) {
+  .search-form {
+    width: 200px;
+  }
+  .search-form:focus-within {
+    width: 350px;
+  }
+}
+.search-form .search-input:focus {
+  box-shadow: none;
+  border-color: #6c757d;
+}
+
+.custom-border-left-info {
+  border-left: 5px solid #5bc0de !important;
+}
+
+.custom-border-left-success {
+  border-left: 5px solid #5cb85c !important;
+}
+
+.custom-border-left-primary {
+  border-left: 5px solid #4e73df !important;
+}
+
+.custom-border-left-warning {
+  border-left: 5px solid #f0ad4e !important;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #ced4da;
+}/*# sourceMappingURL=Portfolio3.css.map */

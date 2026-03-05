@@ -1,0 +1,124 @@
+// 변수 (Variables)
+$sidebar-bg-color: #3b429f; // 사이드바 보라/네이비 톤
+$body-bg: #f4f6f9;
+
+// 카드 테두리 포인트 컬러 변수
+$color-info: #5bc0de;
+$color-success: #5cb85c;
+$color-primary: #4e73df;
+$color-warning: #f0ad4e;
+
+// 기본 스타일링
+body {
+    background-color: $body-bg;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+// 사이드바 스타일링 및 확장 애니메이션
+.sidebar {
+    width: 70px; /* 초기 좁은 너비 */
+    background-color: $sidebar-bg-color;
+    min-height: 100vh;
+    transition: width 0.3s ease-in-out; /* 너비가 변할 때 부드러운 애니메이션 */
+    
+    /* 화면 왼쪽에 고정시켜서 메인 콘텐츠 위로 덮어씌워지게 만듦 */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 1000; // 다른 요소들보다 무조건 위에 오도록 설정
+    
+    overflow: hidden; /* 글자가 삐져나오는 것 숨기기 */
+    white-space: nowrap; /* 글자가 밑으로 줄바꿈 되지 않도록 설정 */
+
+    // 마우스를 올렸을 때(Hover)의 상태
+    &:hover {
+        width: 180px; /* 늘어날 목표 너비 */
+        
+        // 텍스트가 서서히 보이게
+        .nav-item .menu-text {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    // 내부 메뉴 아이템 설정
+    .nav-item {
+        display: flex;
+        align-items: center;
+        padding-left: 23px; /* 아이콘 위치를 중앙처럼 보이게 패딩 조정 */
+        transition: 0.3s;
+        
+        i {
+            width: 30px; /* 아이콘 영역을 고정해서 텍스트 시작 위치를 통일 */
+        }
+
+        .menu-text {
+            margin-left: 10px;
+            opacity: 0;
+            transform: translateX(-20px);
+            display: inline-block; // transform 효과를 완벽하게 적용하기 위한 안전장치
+            
+            /* ★ 마우스가 빠질 때 (원래 상태로 돌아갈 때) */
+            transition: opacity 0.1s ease, transform 0.1s ease; 
+        }
+
+        &:hover {
+            opacity: 1 !important; // 흐렸던(opacity-75) 메뉴가 선명해짐
+            background-color: rgba(255, 255, 255, 0.1); // 마우스 올린 메뉴에 살짝 하이라이트 효과
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    }
+}
+
+// 메인 컨텐츠 영역 레이아웃 조정
+.page-content-wrapper {
+    // 사이드바가 fixed(공중에 띄워짐) 상태이므로, 그 좁은 너비(70px)만큼 왼쪽 여백을 주어 컨텐츠가 가려지지 않게 함
+    margin-left: 70px; 
+    width: calc(100% - 70px);
+}
+
+// 메인 래퍼
+#wrapper {
+    overflow-x: hidden;
+}
+
+// 검색창 확장 애니메이션 (반응형 적용)
+.search-form {
+    width: 100%; /* 모바일에서는 가로를 꽉 채움 */
+    transition: width 0.4s ease-in-out; 
+
+    // 화면 너비가 992px 이상(PC 화면)일 때만 늘어나는 효과 적용
+    @media (min-width: 992px) {
+        width: 200px; 
+        
+        &:focus-within {
+            width: 350px; 
+        }
+    }
+
+    .search-input {
+        &:focus {
+            box-shadow: none;
+            border-color: #6c757d; 
+        }
+    }
+}
+
+// 믹스인 (Mixin): 카드 왼쪽 테두리 생성
+@mixin card-border-left($color) {
+    border-left: 5px solid $color !important;
+}
+
+// 믹스인 적용하여 커스텀 클래스 생성
+.custom-border-left-info    { @include card-border-left($color-info); }
+.custom-border-left-success { @include card-border-left($color-success); }
+.custom-border-left-primary { @include card-border-left($color-primary); }
+.custom-border-left-warning { @include card-border-left($color-warning); }
+
+// 기타 유틸리티 조절
+.form-control:focus {
+    box-shadow: none;
+    border-color: #ced4da;
+}
+
