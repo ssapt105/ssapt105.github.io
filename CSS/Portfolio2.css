@@ -75,6 +75,47 @@ a {
    
 } */
 
+/* 프로필 애니메이션 */
+.flip-outer {
+    width: 140px;
+    height: 140px;
+    perspective: 1000px; /* 3D 회전을 위한 원근감 추가*/
+}
+.flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease; /* 회전 속도와 느낌 조절 */
+    transform-style: preserve-3d;
+}
+.flip-outer:hover .flip-inner {
+    transform: rotateY(180deg);
+}
+.front, .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* 카드가 뒤집혔을 때 뒷면을 숨김 */
+    border-radius: 50%; /* 이미지가 둥글기 때문에 뒷면도 완전히 둥글게 깎아줌 */
+}
+
+.back {
+    background-color: var(--my-blue); /* 기존에 정의하신 파란색 변수 활용 */
+    color: white; /* 파란 배경에 맞게 글씨를 흰색으로 변경 */
+    transform: rotateY(180deg); /* 시작부터 180도 뒤집혀 있도록 설정 */
+    
+    /* 글자를 한가운데(가로, 세로 모두)로 정렬하는 Flexbox 마법 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    h4{font-size: 16px;}
+    p{font-size: 12px;}
+}
+
 /* PC 화면(md 이상)에서만 높이를 500px로 고정 */
 @media (min-width: 768px) {
     .works-card {
@@ -114,3 +155,4 @@ a {
         margin-bottom: 1.5rem !important; /* mb-4 클래스와 겹치지 않게 강제 적용 */
     }
 }
+
